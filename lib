@@ -1,0 +1,464 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+          backgroundColor: Color.fromRGBO(242, 203, 5, 1.0),
+          body: content()
+      ),
+    );
+  }
+
+  // -------------------------------------------------------
+  // アプリ内容表示部分
+  // -------------------------------------------------------
+  Widget content() {
+    return SingleChildScrollView(
+        child: Column(
+          children: <Widget> [
+            title(),
+            mainArea(),
+          ],
+        )
+    );
+  }
+
+  // ---------------------------------------------
+  // トップタイトルウィジェット
+  // ---------------------------------------------
+  Widget title() {
+    return Container(
+      child: Align(
+        alignment: Alignment.center,
+        child: Container(
+          margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+          alignment: Alignment.center,
+          child: Text('トラブルシューティング', style: TextStyle
+            (color: Colors.white, fontSize: 20)),
+          width: 320.0,
+          height: 100.0,
+        ),
+      ),
+    );
+  }
+
+  // ---------------------------------------------
+  // メイン表示ウィジェット
+  // ---------------------------------------------
+  Widget mainArea() {
+    return Column(
+      children: <Widget> [
+        // mainTop(),
+        mainBox(),
+        mainUnder(),
+      ],
+    );
+  }
+
+  // ---------------------------------------------
+  // メイントップウィジェット(オレンジ部分)
+  // ---------------------------------------------
+  Widget mainTop() {
+    return Container(
+      width: 320.0,
+      height: 45.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: mainTopBox(),
+    );
+  }
+
+  Widget mainTopBox() {
+    return Row(
+      children: <Widget> [
+        mainTopLeft(),
+        mainTopText(),
+      ],
+    );
+  }
+
+  Widget mainTopLeft() {
+    return Container(
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Container(
+          width: 10.0,
+          height: 45.0,
+          color: Color.fromRGBO(34, 139, 34, 1.0),
+        ),
+      ),
+    );
+  }
+
+  Widget mainTopText() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+      child: Text('1.救急車を呼ぶ', style: TextStyle
+        (color: Colors.white, fontFamily: 'MPLUS1p-Regular', fontSize: 20)),
+    );
+  }
+
+  Widget mainTop2() {
+    return Container(
+      width: 320.0,
+      height: 45.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: mainTopBox2(),
+    );
+  }
+
+  Widget mainTopBox2() {
+    return Row(
+      children: <Widget> [
+        mainTopLeft(),
+        mainTopText2(),
+      ],
+    );
+  }
+
+  Widget mainTopText2() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+      child: Text('2.警察を呼ぶ', style: TextStyle
+        (color: Colors.white, fontFamily: 'MPLUS1p-Regular' ,fontSize: 20)),
+    );
+  }
+
+  Widget mainTop3() {
+    return Container(
+      width: 320.0,
+      height: 45.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: mainTopBox3(),
+    );
+  }
+
+  Widget mainTopBox3() {
+    return Row(
+      children: <Widget> [
+        mainTopLeft(),
+        mainTopText3(),
+      ],
+    );
+  }
+
+  Widget mainTopText3() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+      child: Text('3.事故現場を記録する', style: TextStyle
+        (color: Colors.white, fontFamily: 'MPLUS1p-Regular', fontSize: 20)),
+    );
+  }
+
+  Widget mainTop4() {
+    return Container(
+      width: 320.0,
+      height: 45.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: mainTopBox4(),
+    );
+  }
+
+  Widget mainTopBox4() {
+    return Row(
+      children: <Widget> [
+        mainTopLeft(),
+        mainTopText4(),
+      ],
+    );
+  }
+
+  Widget mainTopText4() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+      child: Text('4.保険会社に連絡', style: TextStyle
+        (color: Colors.white, fontFamily: 'MPLUS1p-Regular', fontSize: 20)),
+    );
+  }
+
+  Widget mainTop5() {
+    return Container(
+      width: 320.0,
+      height: 45.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: mainTopBox5(),
+    );
+  }
+
+  Widget mainTopBox5() {
+    return Row(
+      children: <Widget> [
+        mainTopLeft(),
+        mainTopText5(),
+      ],
+    );
+  }
+
+  Widget mainTopText5() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
+      child: Text('5.相手との連絡先を交換する', style: TextStyle
+        (color: Colors.white, fontFamily: 'MPLUS1p-Regular', fontSize: 20)),
+    );
+  }
+
+  // ---------------------------------------------
+  // メインコンテンツウィジェット(ホワイト部分)
+  // ---------------------------------------------
+  Widget mainBox() {
+    return Container(
+      width: 320.0,
+      height: 3800.0,
+      color: Colors.white,
+      child: mainBoxContents(),
+    );
+  }
+
+  // ---------------------------------------------
+  // メインコンテンツカラム制御ウィジェット
+  // ---------------------------------------------
+  Widget mainBoxContents() {
+    return Column(
+      children: <Widget> [
+        firstColumn(),
+        secondColumn(),
+        thirdColumn(),
+        forthColumn(),
+        fifthColumn(),
+      ],
+    );
+  }
+
+  // 1.救急車を呼ぶ
+  Widget firstColumn() {
+    return Column(
+      children: <Widget> [
+        mainTop(),
+        firstColumnTitle(),
+        firstColumnContent(),
+        firstColumnButton()
+      ],
+    );
+  }
+
+  Widget firstColumnTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 320,
+      child: Image.asset('assets/ambulance.jpg')
+    );
+  }
+
+  Widget firstColumnContent() {
+    return Container(
+      width: 260,
+      child: Text('　事故を起こしてしまった際、まず一番に確認するべきは怪我人の有無です。'
+          '\n　'
+          '\n　怪我人がいる場合は後続車による二次災害を避けるため速やかに負傷者を安全な場所まで移動させ、救急車を手配しましょう。'
+          , style: TextStyle
+            (fontSize: 18, fontFamily: 'MPLUS1p-Regular')),
+    );
+  }
+
+  Widget firstColumnButton(){
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 50, 0, 20),
+      width: 120,
+      color: Color.fromRGBO(230, 0, 51, 1.0),
+      child: RaisedButton(child: Text('救急車を呼ぶ'),color: Colors.white,
+        // onPressed: _onPressed,
+      ),
+    );
+  }
+
+  // 2.警察を呼ぶ
+  Widget secondColumn() {
+    return Column(
+      children: <Widget> [
+        mainTop2(),
+        secondColumnTitle(),
+        secondColumnContent(),
+        secondColumnButton()
+      ],
+    );
+  }
+
+  Widget secondColumnTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 320,
+      child: Image.asset('assets/police.jpg')
+    );
+  }
+
+  Widget secondColumnContent() {
+    return Container(
+      width: 260,
+      child: Text('　怪我人の有無にかかわらず警察への連絡と報告も必ず行いましょう。'
+          '\n　警察との連絡は道路交通法で定められています。'
+          '\n'
+          '\n　警察への連絡がない場合は損害賠償請求時の事故証明書が発行されないため、必ず警察への連絡を行いましょう。', style: TextStyle
+        (fontSize: 18, fontFamily: 'MPLUS1p-Regular')),
+    );
+  }
+
+  Widget secondColumnButton(){
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 50, 0, 20),
+      width: 120,
+      color: Color.fromRGBO(30, 80, 162, 1.0),
+      child: RaisedButton(child: Text('警察を呼ぶ'),color: Colors.white,
+        // onPressed: _onPressed,
+      ),
+    );
+  }
+
+  // 3.事故現場を記録する
+  Widget thirdColumn() {
+    return Column(
+      children: <Widget> [
+        mainTop3(),
+        thirdColumnTitle(),
+        thirdColumnContent(),
+      ],
+    );
+  }
+
+  Widget thirdColumnTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 320,
+        child: Image.asset('assets/record.jpg')
+    );
+  }
+
+  Widget thirdColumnContent() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+      width: 260,
+      child: Text('　警察が到着すれば現場検証が行われますが、損害賠償請求の際の交渉材料のため事故当時の状況、損傷個所など携帯のカメラなどで自身でも記録を取っておきましょう。',
+          style: TextStyle
+            (fontSize: 18, fontFamily: 'MPLUS1p-Regular')),
+    );
+  }
+
+  // 4.保険会社に連絡
+  Widget forthColumn() {
+    return Column(
+      children: <Widget> [
+        mainTop4(),
+        forthColumnTitle(),
+        forthColumnContent(),
+        forthColumnContent2()
+      ],
+    );
+  }
+
+  Widget forthColumnTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 320,
+        child: Image.asset('assets/contact_customer.jpg')
+    );
+  }
+
+  Widget forthColumnContent() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+      width: 260,
+      child: Text('　自身が加入している保険会社の代理店またはカスタマーセンターに連絡を取りましょう。'
+          '\n'
+          '\n　事故処理の今後の動きを示してくれるので、状況を極力詳細に話すように心がけましょう。',
+          style: TextStyle(fontSize: 18, fontFamily: 'MPLUS1p-Regular')),
+    );
+  }
+
+  Widget forthColumnContent2() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 260.0,
+      height: 470.0,
+      color: Color.fromRGBO(242, 139, 12, 1.0),
+      child: Text(
+          '[〇〇〇]様の登録保険会社'
+          '\n車名： スペーシア'
+          '\n登録保険会社：[△△△]'
+          '\n電話番号：[×××]'
+          '\n'
+          '\n車名： スペーシア'
+          '\n登録保険会社：[△△△]'
+          '\n電話番号：[×××]'
+          '\n'
+          '\n車名： スペーシア'
+          '\n登録保険会社：[△△△]'
+          '\n電話番号：[×××]',
+          style: TextStyle(fontSize: 16, fontFamily: 'MPLUS1p-Regular')),
+    );
+  }
+
+  // 5.相手との連絡先を交換する
+  Widget fifthColumn() {
+    return Column(
+      children: <Widget> [
+        mainTop5(),
+        fifthColumnTitle(),
+        fifthColumnContent(),
+      ],
+    );
+  }
+
+  Widget fifthColumnTitle() {
+    return Container(
+      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+      width: 320,
+        child: Image.asset('assets/change_record.jpg')
+    );
+  }
+
+  Widget fifthColumnContent() {
+    return Container(
+        margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+        width: 260,
+        child: RichText(
+          text: TextSpan(style: TextStyle(fontSize: 18, fontFamily: 'MPLUS1p-Regular', color: Colors.black),
+              children: [
+                TextSpan(text:'　賠償請求の交渉の際に必要となるため相手の連絡先を交換しておきましょう。'
+                    '\n'
+                    '\n　具体的には'
+                    '\n'
+                    '\n・指名・住所・連絡先'
+                    '\n・車両のナンバープレート番号'
+                    '\n・勤務先の名称・住所・連絡先'
+                    '\n・自賠責保険・任意の保険会社の会社名と契約者名'
+                    '\n'
+                    '\n　この4つの情報が必要となります。この時注意しなければならないのが'
+                    '\n'
+                    '\n',),
+
+                TextSpan(text: '\n　その場で示談しないこと', style: TextStyle(fontSize: 18, fontFamily: 'MPLUS1p-Regular', color: Color.fromRGBO(230, 0, 51, 1.0))),
+                TextSpan(text: '\n'
+                               '\n'
+                               '\n　当事者同士での示談はのちのトラブルの原因となりますので、必ず保険会社を挟んで今後の事故対応を行いましょう。', style: TextStyle(fontSize: 18, fontFamily: 'MPLUS1p-Regular'),)
+              ],
+            )
+        )
+    );
+  }
+
+// ---------------------------------------------
+// メインアンダーウィジェット
+// ---------------------------------------------
+
+  Widget mainUnder() {
+    return Container(
+        width: 320,
+        height: 7,
+        color: Color.fromRGBO(242, 139, 12, 1.0)
+    );
+  }
+}
